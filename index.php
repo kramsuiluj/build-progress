@@ -53,7 +53,11 @@ if (isset($_POST['submit'])) {
             <h1>Build Build Build Progress</h1>
             <section>
                 <label for="">Department</label><br>
-                <input type="text" name="department">
+                <select name="department" id="">
+                    <option value="DPWH">DPWH</option>
+                    <option value="DOTr">DOTr</option>
+                    <option value="BCDA">BCDA</option>
+                </select>
             </section>
             <section>
                 <label for="">Project Name</label><br>
