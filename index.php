@@ -9,7 +9,8 @@
     
     <div>
     
-        <form action="">
+        <form action="index.php" method="POST">
+            <h1>Build Build Build Progress</h1>
             <section>
                 <label for="">Department</label><br>
                 <input type="text" name="department">
@@ -20,13 +21,23 @@
             </section>
             <section>
                 <label for="">Start Date</label><br>
-                <input type="text" name="sdate">
+                <input type="date" name="sdate">
+            </section>
+            <h2>Project Progress</h2>
+            <section>
+                <label for="">Development</label><br>
+                <input type="text" name="development">
             </section>
             <section>
-                <label for="">Project Progress</label><br>
-                <input type="text" name="progress">
+                <label for="">Procurement</label><br>
+                <input type="text" name="procurement">
             </section>
             <section>
+                <label for="">Implementation</label><br>
+                <input type="text" name="implementation">
+            </section>
+            <section>
+                <br>
                 <input type="submit" name="submit" value="SUBMIT">
             </section>
         </form>
