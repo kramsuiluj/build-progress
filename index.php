@@ -2,11 +2,35 @@
 
 require_once 'db/conn.php';
 
+$msg = '';
+
 if (isset($_POST['submit'])) {
 
     if (empty($_POST['department']) || empty($_POST['pname']) || empty($_POST['sdate']) || empty($_POST['development']) || empty($_POST['procurement']) || empty($_POST['implementation'])) {
 
+        echo 'All input fields are required to proceed.';
+
+    } else {
+
+        $department = $_POST['department'];
+        $pname = $_POST['pname'];
+        $sdate = $_POST['sdate'];
+        $development = $_POST['development'];
+        $procurement = $_POST['procurement'];
+        $implementation = $_POST['implementation'];
         
+
+        $isSuccess = $crud->submit($department, $pname, $sdate, $development, $procurement, $implementation);
+
+        if ($isSuccess) {
+
+            $msg = "The project data has been saved successfully.";
+
+        } else {
+
+            $msg = "There was an error while saving the project data. Please try again.";
+
+        }
 
     }
 
@@ -56,6 +80,13 @@ if (isset($_POST['submit'])) {
                 <br>
                 <input type="submit" name="submit" value="SUBMIT">
             </section>
+            
+            <br>
+
+            <?php if (!empty($msg)) { ?>
+                <?php echo $msg ?>
+            <?php } ?>
+
         </form>
     
     </div>
