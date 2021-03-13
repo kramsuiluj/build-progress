@@ -1,3 +1,19 @@
+<?php 
+
+require_once 'db/conn.php';
+
+if (isset($_POST['submit'])) {
+
+    if (empty($_POST['department']) || empty($_POST['pname']) || empty($_POST['sdate']) || empty($_POST['development']) || empty($_POST['procurement']) || empty($_POST['implementation'])) {
+
+        
+
+    }
+
+}
+
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">

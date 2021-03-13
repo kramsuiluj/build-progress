@@ -1,5 +1,7 @@
 <?php 
 
+require_once 'crud.php';
+
 $host = 'localhost';
 $name = 'build-progress';
 $user = 'root';
@@ -16,5 +18,7 @@ try {
     echo 'There was an error while connecting to the database: ' . $e->getMessage();
 
 }
+
+$crud = new crud($pdo);
 
 ?>
