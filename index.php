@@ -37,11 +37,22 @@ if (isset($_POST['submit'])) {
 
 }
 
+
 $results = $crud->getProjects();
 
-foreach ($results as $result) {
-    echo $result['pname'];
-}
+// foreach ($results as $result) {
+
+//     echo $result['department'] . '<br>';
+//     echo $result['pname'] . '<br>';
+//     echo $result['sdate'] . '<br>';
+//     echo $result['development'] . '<br>';
+//     echo $result['procurement'] . '<br>';
+//     echo $result['implementation'] . '<br>';
+
+//     echo '-------------------------' . '<br>';
+
+// }
+
 
 ?>
 
@@ -118,26 +129,39 @@ foreach ($results as $result) {
 
         </div>
 
-        <!-- <div class="table-container">
+        <div class="table-container">
             
-            <table style="border: 1px solid black;">
+            <table>
                     
                 <tr>
-                    <th rowspan="2" style="border: 1px solid black;">Department</th>
-                    <th rowspan="2" style="border: 1px solid black;">Project Name</th>
-                    <th rowspan="2" style="border: 1px solid black;">Start Date</th>
-                    <th colspan="3" style="border: 1px solid black;"    >Project Progress</th>
+                    <th rowspan="2">Department</th>
+                    <th rowspan="2">Project Name</th>
+                    <th rowspan="2">Start Date</th>
+                    <th colspan="4">Project Progress</th>
                 </tr>
 
                 <tr>
-                    <th style="border: 1px solid black;">Development</th>
-                    <th style="border: 1px solid black;">Procurement</th>
-                    <th style="border: 1px solid black;">Implementation</th>
+                    <th>Development</th>
+                    <th>Procurement</th>
+                    <th>Implementation</th>
+                    <th>Total Progress</th>
                 </tr>
+
+                <?php foreach($results as $result) { ?>
+                    <tr>
+                        <th><?php echo $result['department']; ?></th>
+                        <th><?php echo $result['pname']; ?></th>
+                        <th><?php echo $result['sdate']; ?></th>
+                        <th><?php echo $result['development'] . '%'; ?></th>
+                        <th><?php echo $result['procurement'] . '%'; ?></th>
+                        <th><?php echo $result['implementation'] . '%'; ?></th>
+                        <th><?php echo ($result['development'] + $result['procurement'] + $result['implementation']) . '%'; ?></th>
+                    </tr>
+                <?php } ?>
 
             </table>
 
-        </div> -->
+        </div>
     
     </div>
 

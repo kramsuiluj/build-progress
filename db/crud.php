@@ -41,6 +41,7 @@ class crud {
 
     }
 
+    // This function fetches all the data on the database table named projects.
     public function getProjects() {
 
         // First, prepare the SQL statement to be executed.
@@ -48,8 +49,6 @@ class crud {
 
         // Prepare the sql query then save it to a result variable.
         $result = $this->db->query($sql);
-
-        $result->fetchAll();
 
         // Return the value of the result to access the fetched data.
         return $result;
