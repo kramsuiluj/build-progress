@@ -1,3 +1,136 @@
+/* imports */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/* font-family: 'Oswald', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* font-family: 'Roboto', sans-serif; */
+
+/* end of imports */
+
+
+/* ---------------------------------------------------------------------- */
+
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------------------------------------------------------------------- */
+
+
+/* CSS Custom Properties */
+:root {
+
+    /* fonts */
+    --headings: 'Roboto', sans-serif;
+    --labels: 'Open Sans', sans-serif;
+
+    /* colors */
+    --bg-color: #9ad1d4;
+    --accent: #f46036;
+    --success: #20c997;
+
+}
+/* End of CSS Custom Properties */
+
+
+/* ---------------------------------------------------------------------- */
+
+body {
+    background-color: var(--bg-color);
+}
+
+/* Form Container Styles */
+.form-container {
+    width: 100%;
+    max-width: 30%;
+    margin: 0 auto;
+    margin-top: 5%;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 1px;
+    overflow: hidden;
+}
+/* End of Form Container Styles */
+
+
+/* ---------------------------------------------------------------------- */
+
+
+/* Form Styles */
+form {
+}
+
+form section > h1 {
+    text-align: center;
+    font-family: var(--headings);
+    margin: 5% 0;
+}
+
+form section > h2 {
+    text-align: center;
+    font-family: var(--headings);
+    margin-top: 10%;
+    margin-bottom
+}
+
+form > section {
+    width: 100%;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1.5%;
+}
+
+form section:nth-child(1) {
+    margin-top: 5%;
+}
+
+form section:nth-child(9) {
+    text-align: center;
+}
+
+form section > label {
+    font-family: var(--labels);
+}
+
+form section > input {
+    width: 100%;
+}
+
+form section > button {
+    width: 100%;
+    max-width: 50%;
+    background-color: var(--accent);
+    border: none;
+    border-radius: 5px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    color: white;
+    font-weight: bold;
+}
+
+form > p {
+    text-align: center;
+    color: rgb(49, 44, 44);
+    background-color: var(--success);
+    overflow: hidden;
+    font-family: var(--labels);
+    font-size: small;
+}
+/* End of Form Styles */
+
+
+/* ---------------------------------------------------------------------- */
+
+
+/* Input Validation Styles */
 input.input-valid {
     border-color: green;
 }
@@ -5,3 +138,4 @@ input.input-valid {
 input.input-invalid {
     border-color: orange;
 }
+/* End of Input Validation Styles */

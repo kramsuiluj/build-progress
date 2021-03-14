@@ -2,7 +2,8 @@
 
 require_once 'db/conn.php';
 
-$msg = '';
+$success = '';
+$failed = '';
 
 if (isset($_POST['submit'])) {
 
@@ -24,11 +25,11 @@ if (isset($_POST['submit'])) {
 
         if ($isSuccess) {
 
-            $msg = "The project data has been saved successfully.";
+            $success = "The project data has been saved successfully.";
 
         } else {
 
-            $msg = "There was an error while saving the project data. Please try again.";
+            $failed = "There was an error while saving the project data. Please try again.";
 
         }
 
@@ -43,56 +44,73 @@ if (isset($_POST['submit'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        <?php require_once 'styles.css'; ?>
+    </style>
     <title>Build-Progress</title>
 </head>
 <body>
     
     <div>
     
-        <form action="index.php" method="POST">
-            <h1>Build Build Build Progress</h1>
-            <section>
-                <label for="">Department</label><br>
-                <select name="department" id="">
-                    <option value="DPWH">DPWH</option>
-                    <option value="DOTr">DOTr</option>
-                    <option value="BCDA">BCDA</option>
-                </select>
-            </section>
-            <section>
-                <label for="">Project Name</label><br>
-                <input type="text" name="pname">
-            </section>
-            <section>
-                <label for="">Start Date</label><br>
-                <input type="date" name="sdate">
-            </section>
-            <h2>Project Progress</h2>
-            <section>
-                <label for="">Development</label><br>
-                <input type="text" name="development">
-            </section>
-            <section>
-                <label for="">Procurement</label><br>
-                <input type="text" name="procurement">
-            </section>
-            <section>
-                <label for="">Implementation</label><br>
-                <input type="text" name="implementation">
-            </section>
-            <section>
+        <div class="form-container">
+
+            <form action="index.php" method="POST" id="form1">
+                
+                <section>
+                    <h1>Build Build Build Progress</h1>
+                </section>
+                <section>
+                    <label for="">Department</label><br>
+                    <select name="department" id="">
+                        <option value="DPWH">DPWH</option>
+                        <option value="DOTr">DOTr</option>
+                        <option value="BCDA">BCDA</option>
+                    </select>
+                </section>
+                <section>
+                    <label for="">Project Name</label><br>
+                    <input type="text" name="pname">
+                </section>
+                <section>
+                    <label for="">Start Date</label><br>
+                    <input type="date" name="sdate">
+                </section>
+                <section>
+                <h2>Project Progress</h2>
+                </section>
+                <section>
+                    <label for="">Development</label><br>
+                    <input type="text" name="development">
+                </section>
+                <section>
+                    <label for="">Procurement</label><br>
+                    <input type="text" name="procurement">
+                </section>
+                <section>
+                    <label for="">Implementation</label><br>
+                    <input type="text" name="implementation">
+                </section>
+                <section>
+                    <br>
+                    <button type="submit" name="submit" value="submit" form="form1">SUBMIT</button>
+                </section>
+                
                 <br>
-                <input type="submit" name="submit" value="SUBMIT">
-            </section>
-            
-            <br>
 
-            <?php if (!empty($msg)) { ?>
-                <?php echo $msg ?>
-            <?php } ?>
+                <?php if (!empty($success)) { ?>
 
-        </form>
+                    <p class="success-msg"><?php echo $success ?></p>
+
+                <?php } else { ?>
+
+                    <p class="failed-msg"><?php echo $failed ?></p>
+
+                <?php } ?>
+
+            </form>
+
+        </div>
     
     </div>
 
