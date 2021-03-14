@@ -5,11 +5,10 @@ const inputs = document.querySelectorAll('input');
 
 // This block of code stores all the regex patterns.
 const patterns = {
-    // pname: /^[\w\.?-? ?]{4,50}$/,
-    pname: /^[a-zA-Z\d? ?\-?]{4,50}$/,
-    development: /^[0-9\.?]{1,5}%$/,
-    procurement: /^[0-9\.?]{1,5}%$/,
-    implementation: /^[0-9\.?]{1,5}%$/
+    pname: /^[a-zA-Z\d? ?\-?\.?,?]{4,50}$/,
+    development: /^[0-9\.?]{1,5}$/,
+    procurement: /^[0-9\.?]{1,5}$/,
+    implementation: /^[0-9\.?]{1,5}$/
 }
 
 // Validation function

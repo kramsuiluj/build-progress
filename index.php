@@ -7,7 +7,7 @@ $failed = '';
 
 if (isset($_POST['submit'])) {
 
-    if (empty($_POST['department']) || empty($_POST['pname']) || empty($_POST['sdate']) || empty($_POST['development']) || empty($_POST['procurement']) || empty($_POST['implementation'])) {
+    if (empty($_POST['department']) || empty($_POST['pname']) || empty($_POST['sdate'])) {
 
         echo 'All input fields are required to proceed.';
 
@@ -149,13 +149,13 @@ $results = $crud->getProjects();
 
                 <?php foreach($results as $result) { ?>
                     <tr>
-                        <th><?php echo $result['department']; ?></th>
-                        <th><?php echo $result['pname']; ?></th>
-                        <th><?php echo $result['sdate']; ?></th>
-                        <th><?php echo $result['development'] . '%'; ?></th>
-                        <th><?php echo $result['procurement'] . '%'; ?></th>
-                        <th><?php echo $result['implementation'] . '%'; ?></th>
-                        <th><?php echo ($result['development'] + $result['procurement'] + $result['implementation']) . '%'; ?></th>
+                        <td><?php echo $result['department']; ?></td>
+                        <td><?php echo $result['pname']; ?></td>
+                        <td><?php echo $result['sdate']; ?></td>
+                        <td><?php echo $result['development'] . '%'; ?></td>
+                        <td><?php echo $result['procurement'] . '%'; ?></td>
+                        <td><?php echo $result['implementation'] . '%'; ?></td>
+                        <td><?php echo ($result['development'] + $result['procurement'] + $result['implementation']) . '%'; ?></td>
                     </tr>
                 <?php } ?>
 
