@@ -41,6 +41,21 @@ class crud {
 
     }
 
+    public function getProjects() {
+
+        // First, prepare the SQL statement to be executed.
+        $sql = "SELECT * FROM projects";
+
+        // Prepare the sql query then save it to a result variable.
+        $result = $this->db->query($sql);
+
+        $result->fetchAll();
+
+        // Return the value of the result to access the fetched data.
+        return $result;
+
+    }
+
 }
 
 ?>

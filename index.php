@@ -37,6 +37,12 @@ if (isset($_POST['submit'])) {
 
 }
 
+$results = $crud->getProjects();
+
+foreach ($results as $result) {
+    echo $result['pname'];
+}
+
 ?>
 
 <html lang="en">
@@ -58,7 +64,7 @@ if (isset($_POST['submit'])) {
             <form action="index.php" method="POST" id="form1">
                 
                 <section>
-                    <h1>Build Build Build Progress</h1>
+                    <h1>Build Build Build Projects</h1>
                 </section>
                 <section>
                     <label for="">Department</label><br>
@@ -111,6 +117,27 @@ if (isset($_POST['submit'])) {
             </form>
 
         </div>
+
+        <!-- <div class="table-container">
+            
+            <table style="border: 1px solid black;">
+                    
+                <tr>
+                    <th rowspan="2" style="border: 1px solid black;">Department</th>
+                    <th rowspan="2" style="border: 1px solid black;">Project Name</th>
+                    <th rowspan="2" style="border: 1px solid black;">Start Date</th>
+                    <th colspan="3" style="border: 1px solid black;"    >Project Progress</th>
+                </tr>
+
+                <tr>
+                    <th style="border: 1px solid black;">Development</th>
+                    <th style="border: 1px solid black;">Procurement</th>
+                    <th style="border: 1px solid black;">Implementation</th>
+                </tr>
+
+            </table>
+
+        </div> -->
     
     </div>
 
