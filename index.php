@@ -7,7 +7,7 @@ $failed = '';
 
 if (isset($_POST['submit'])) {
 
-    if (empty($_POST['department']) || empty($_POST['pname']) || empty($_POST['sdate'])) {
+    if (empty($_POST['department']) || empty($_POST['pname'])) {
 
         echo 'All input fields are required to proceed.';
 

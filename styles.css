@@ -169,6 +169,8 @@ table tr > th {
     font-family: var(--headings);
     border: 1px solid black;
     padding: 0 30px;
+    background-color: var(--accent);
+    color: white;
 }
 
 table tr > td {
