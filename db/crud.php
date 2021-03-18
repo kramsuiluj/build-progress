@@ -55,6 +55,32 @@ class crud {
 
     }
 
+    public function getByName() {
+
+        // First, prepare the sql statement to be executed.
+        $sql = "SELECT * FROM projects ORDER BY pname";
+
+        // Prepare the sql statement then save it to a result variable.
+        $result = $this->db->query($sql);
+
+        // Return the value of the result to access the fetched data.
+        return $result;
+
+    }
+
+    public function getByDate() {
+
+        // First, prepare the sql statement to be executed.
+        $sql = "SELECT * FROM projects ORDER BY sdate";
+        
+        // Prepare the sql statement then save it to a result variable.
+        $result = $this->db->query($sql);
+
+        // Return the value of the result to access the fetched data.
+        return $result;
+
+    }
+
 }
 
 ?>
